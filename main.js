@@ -10,16 +10,23 @@ var total = sports.push('football', 'swimming'); A:console.log(sports);
 // 2.
 // Using the `strings` array, wrte a function `longestString()`
 // that accepts an array argument and returns the longest string in the array
-var strings = ['this','is','a','collection','of','words'];
-var lgth = 0;
-var longestString;
+ var strings = ['this','is','a','collection','of','words'];
+ var lgth = 0;
+ var longest = "";
 
-for(var i=0; i < strings.length; i++){
+function longestString(strings) {
+
+  for(var i=0; i < strings.length; i++){
+
     if(strings[i].length > lgth){
-        var lgth = strings[i].length;
-        longest = strings[i];
+      lgth = strings[i].length;
+      longest = strings[i];
     }
+  }
+  return(longest)
 }
+
+
 console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
 
 
@@ -31,14 +38,18 @@ var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 // Write a function `smallestNumber()` that accepts an array
 // and returns the smallest number in the array.
 // A:
- function smallestNumber(numbers)
-  for (var i = 1; i < arr.length; i++) {
-    if (numbers[i] > largest) {
-      largest = numbers[i];
-    } else if (numbers[i] < smallest){
+var smallest = 4000;
+
+ function smallestNumber(numbers) {
+  for (var i = 0; i < numbers.length; i++) {
+  
+     if (numbers[i] < smallest){
       smallest = numbers[i];
+    }
+
     return smallest;
   }
+}
 
 
 console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should return 1"});
